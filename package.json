@@ -1,0 +1,32 @@
+{
+  "name": "sequelize-parse-url",
+  "version": "1.0.0",
+  "description": "Parses a sequelize url into a configuration object",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kmalakoff/sequelize-parse-url.git"
+  },
+  "keywords": [
+    "sequelize",
+    "parse",
+    "url",
+    "database",
+    "db",
+    "config"
+  ],
+  "author": "Kevin Malakoff",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kmalakoff/sequelize-parse-url/issues"
+  },
+  "homepage": "https://github.com/kmalakoff/sequelize-parse-url#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.0"
+  }
+}
