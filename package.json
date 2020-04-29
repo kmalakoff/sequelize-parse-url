@@ -1,6 +1,6 @@
 {
   "name": "sequelize-parse-url",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Parses a sequelize url into a configuration object",
   "main": "index.js",
   "scripts": {
@@ -38,7 +38,7 @@
     "eslint-plugin-standard": "^4.0.1",
     "mocha": "^7.1.2",
     "mocha-compat": "^3.5.5",
-    "nvs": "^0.1.8",
+    "nvs": "^0.2.0",
     "prettier": "^2.0.5"
   }
 }
