@@ -22,7 +22,7 @@
   "author": "Kevin Malakoff",
   "main": "index.js",
   "scripts": {
-    "format": "prettier --write '**/*.{js,mjs}'",
+    "format": "prettier --write .",
     "lint": "eslint . --ext js,mjs",
     "test": "mocha-compat test/spec/**/*.test.js"
   },
