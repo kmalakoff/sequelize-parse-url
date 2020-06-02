@@ -25,7 +25,7 @@
     "format": "prettier --write .",
     "lint": "eslint . --ext js,mjs",
     "test": "mocha-compat test/spec/**/*.test.js",
-    "prepublishOnly": "dtd \"npm run lint\" \"depcheck --ignores='depcheck'\""
+    "prepublishOnly": "dtd \"npm run lint\" \"depcheck\""
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
