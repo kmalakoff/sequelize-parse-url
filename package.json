@@ -2,17 +2,6 @@
   "name": "sequelize-parse-url",
   "version": "1.0.2",
   "description": "Parses a sequelize url into a configuration object",
-  "main": "index.js",
-  "scripts": {
-    "test": "mocha test/spec/**/*.test.js",
-    "compat": "nvs 14,12,10,8,6,4,0.12,0.10,0.8 mocha-compat test/spec/**/*.test.js",
-    "lint": "eslint . --ext js,mjs",
-    "format": "prettier --write '**/*.{js,mjs}'"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kmalakoff/sequelize-parse-url.git"
-  },
   "keywords": [
     "sequelize",
     "parse",
@@ -21,24 +10,40 @@
     "db",
     "config"
   ],
-  "author": "Kevin Malakoff",
-  "license": "MIT",
+  "homepage": "https://github.com/kmalakoff/sequelize-parse-url#readme",
   "bugs": {
     "url": "https://github.com/kmalakoff/sequelize-parse-url/issues"
   },
-  "homepage": "https://github.com/kmalakoff/sequelize-parse-url#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kmalakoff/sequelize-parse-url.git"
+  },
+  "license": "MIT",
+  "author": "Kevin Malakoff",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "format": "prettier --write '**/*.{js,mjs}'",
+    "lint": "eslint . --ext js,mjs",
+    "prepublishOnly": "npm run lint && depcheck",
+    "test": "mocha-compat test/spec/**/*.test.js",
+    "test:engines": "nvu engines npm test"
+  },
   "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-config-standard": "^14.1.1",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
-    "mocha": "^7.1.2",
+    "@typescript-eslint/parser": "^5.30.7",
+    "depcheck": "^1.4.3",
+    "eslint": "^8.20.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.4",
+    "eslint-plugin-promise": "^6.0.0",
     "mocha-compat": "^3.5.5",
-    "nvs": "^0.2.0",
-    "prettier": "^2.0.5"
+    "prettier": "^2.7.1"
+  },
+  "engines": {
+    "node": ">=0.8"
   }
 }
