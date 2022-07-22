@@ -28,7 +28,7 @@
     "format": "prettier --write '**/*.{js,mjs}'",
     "lint": "eslint . --ext js,mjs",
     "prepublishOnly": "npm run lint && depcheck",
-    "test": "mocha-compat test/spec/**/*.test.js",
+    "test": "mocha-compat test/spec/**/*.test.js --no-timeouts",
     "test:engines": "nvu engines npm test"
   },
   "devDependencies": {
