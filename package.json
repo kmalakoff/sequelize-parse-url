@@ -25,6 +25,7 @@
     "lib"
   ],
   "scripts": {
+    "build": "",
     "format": "prettier --write '**/*.{js,mjs}'",
     "lint": "eslint . --ext js,mjs",
     "prepublishOnly": "npm run lint && depcheck",
