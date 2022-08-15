@@ -25,16 +25,17 @@
     "lib"
   ],
   "scripts": {
+    "build": "",
     "format": "prettier --write '**/*.{js,mjs}'",
     "lint": "eslint . --ext js,mjs",
     "prepublishOnly": "npm run lint && depcheck",
-    "test": "mocha-compat test/spec/**/*.test.js",
+    "test": "mocha-compat test/spec/**/*.test.js --no-timeouts",
     "test:engines": "nvu engines npm test"
   },
   "devDependencies": {
-    "@typescript-eslint/parser": "^5.30.7",
+    "@typescript-eslint/parser": "^5.33.1",
     "depcheck": "^1.4.3",
-    "eslint": "^8.20.0",
+    "eslint": "^8.22.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
