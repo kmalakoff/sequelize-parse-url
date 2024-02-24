@@ -1,9 +1,8 @@
-const url = require('url');
-const path = require('path');
+import url from 'url';
+import path from 'path';
 
-module.exports = function parseUrl(sourceUrl) {
+export default function parseUrl(sourceUrl) {
   const options = {};
-  // eslint-disable-next-line n/no-deprecated-api
   const urlParts = url.parse(sourceUrl, true);
   options.dialect = urlParts.protocol.replace(/:$/, '');
   options.host = urlParts.hostname;
