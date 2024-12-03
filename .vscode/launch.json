@@ -13,7 +13,7 @@
         "--timeout",
         "999999",
         "--colors",
-        "${workspaceFolder}/test/spec/**/*.test.js"
+        "${workspaceFolder}/test/**/*.test.*"
       ],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
@@ -27,7 +27,7 @@
         "--timeout",
         "999999",
         "--colors",
-        "${workspaceFolder}/test/spec/**/*.test.js"
+        "${workspaceFolder}/test/**/*.test.*"
       ],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
