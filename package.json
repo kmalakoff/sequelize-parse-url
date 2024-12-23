@@ -20,30 +20,34 @@
   },
   "license": "MIT",
   "author": "Kevin Malakoff",
-  "main": "lib/index.js",
+  "main": "dist/cjs/index.js",
+  "types": "dist/types/index.d.ts",
   "files": [
-    "lib"
+    "dist"
   ],
   "scripts": {
-    "format": "prettier --write '**/*.{js,mjs}'",
-    "lint": "eslint . --ext js,mjs",
-    "prepublishOnly": "npm run lint && depcheck",
-    "test": "mocha-compat test/spec/**/*.test.js",
-    "test:engines": "nvu engines npm test"
+    "build": "tsds build",
+    "deploy": "tsds deploy",
+    "format": "biome check --write --unsafe src/ test/",
+    "test": "tsds test:node --no-timeouts",
+    "test:engines": "nvu engines npm test",
+    "version": "tsds version"
   },
   "devDependencies": {
-    "@typescript-eslint/parser": "^5.30.7",
-    "depcheck": "^1.4.3",
-    "eslint": "^8.20.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-config-standard": "^17.0.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-n": "^15.2.4",
-    "eslint-plugin-promise": "^6.0.0",
-    "mocha-compat": "^3.5.5",
-    "prettier": "^2.7.1"
+    "@biomejs/biome": "^1.9.4",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.10.2",
+    "depcheck": "^1.4.7",
+    "ts-dev-stack": "^1.4.12"
   },
+  "packageManager": "npm@11.0.0+sha512.11dff29565d2297c74e7c594a9762581bde969f0aa5cbe6f5b3644bf008a16c065ece61094d9ffbb81125be38df8e1ba43eb8244b3d30c61eb797e9a2440e3ec",
   "engines": {
     "node": ">=0.8"
+  },
+  "tsds": {
+    "source": "src/index.mjs",
+    "targets": [
+      "cjs"
+    ]
   }
 }

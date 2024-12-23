@@ -1,0 +1,1 @@
+ignores: ["sequelize-parse-url", "depcheck", "ts-dev-stack", "@types/*", "@biomejs/*"]
