@@ -1,9 +1,8 @@
-const url = require('url');
-const path = require('path');
+import path from 'path';
+import url from 'url';
 
-module.exports = function parseUrl(sourceUrl) {
+export default function parseUrl(sourceUrl) {
   const options = {};
-  // eslint-disable-next-line n/no-deprecated-api
   const urlParts = url.parse(sourceUrl, true);
   options.dialect = urlParts.protocol.replace(/:$/, '');
   options.host = urlParts.hostname;
@@ -28,9 +27,9 @@ module.exports = function parseUrl(sourceUrl) {
   }
 
   if (urlParts.query) {
-    if (options.dialectOptions) Object.assign(options.dialectOptions, urlParts.query);
+    if (options.dialectOptions) options.dialectOptions = { ...options.dialectOptions, ...urlParts.query };
     else options.dialectOptions = urlParts.query;
   }
 
   return options;
-};
+}
