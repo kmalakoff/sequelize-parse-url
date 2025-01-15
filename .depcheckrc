@@ -1,1 +1,1 @@
-ignores: ["@types/*", "sequelize-parse-url", "@biomejs/*"]
+ignores: ["sequelize-parse-url"]
