@@ -20,7 +20,7 @@
   },
   "license": "MIT",
   "author": "Kevin Malakoff",
-  "main": "dist/cjs/index.cjs",
+  "main": "dist/cjs/index.js",
   "types": "dist/cjs/index.d.cts",
   "files": [
     "dist"
@@ -40,7 +40,7 @@
     "node": ">=0.8"
   },
   "tsds": {
-    "source": "src/index.mjs",
+    "source": "src/index.ts",
     "targets": [
       "cjs"
     ]
