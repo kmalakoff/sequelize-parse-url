@@ -1,11 +1,23 @@
 import path from 'path';
 import url from 'url';
 
-export default function parseUrl(sourceUrl) {
-  const options = {};
+export interface Parsed {
+  dialect: string;
+  host: string;
+  storage?: string;
+  database?: string;
+  port?: string;
+  username?: string;
+  password?: string;
+  dialectOptions?: object;
+}
+
+export default function parseUrl(sourceUrl): Parsed {
   const urlParts = url.parse(sourceUrl, true);
-  options.dialect = urlParts.protocol.replace(/:$/, '');
-  options.host = urlParts.hostname;
+  const options = {
+    dialect: urlParts.protocol.replace(/:$/, ''),
+    host: urlParts.hostname,
+  } as Parsed;
 
   if (options.dialect === 'sqlite' && urlParts.pathname && !urlParts.pathname.startsWith('/:memory')) {
     const storagePath = path.join(options.host, urlParts.pathname);
