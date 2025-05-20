@@ -1,7 +1,8 @@
-const assert = require('assert');
-const path = require('path');
+import assert from 'assert';
+import path from 'path';
 
-const parse = require('sequelize-parse-url');
+// @ts-ignore
+import parse from 'sequelize-parse-url';
 
 describe('Instantiation with a URL string', () => {
   it('should accept username, password, host, port, and database', () => {
@@ -19,7 +20,7 @@ describe('Instantiation with a URL string', () => {
   describe('sqllite path initialization', () => {
     // var current = Support.sequelize;
     const current = { dialect: 'sqlite' };
-    if (current.dialect.name === 'sqlite') {
+    if (current.dialect === 'sqlite') {
       it('should accept relative paths for sqlite', () => {
         const options = parse('sqlite:subfolder/dbname.db');
         assert.equal(options.dialect, 'sqlite');

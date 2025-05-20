@@ -12,36 +12,39 @@ export interface Parsed {
   dialectOptions?: object;
 }
 
-export default function parseUrl(sourceUrl): Parsed {
+export interface ParseOptions {
+  storage?: string;
+}
+
+export default function parseUrl(sourceUrl, options: ParseOptions = {}): Parsed {
   const urlParts = url.parse(sourceUrl, true);
-  const options = {
+  const parsed = {
     dialect: urlParts.protocol.replace(/:$/, ''),
     host: urlParts.hostname,
   } as Parsed;
 
-  if (options.dialect === 'sqlite' && urlParts.pathname && !urlParts.pathname.startsWith('/:memory')) {
-    const storagePath = path.join(options.host, urlParts.pathname);
-    options.storage = path.resolve(options.storage || storagePath);
+  if (parsed.dialect === 'sqlite' && urlParts.pathname && !urlParts.pathname.startsWith('/:memory')) {
+    parsed.storage = path.resolve(options.storage || path.join(parsed.host, urlParts.pathname));
   }
 
   if (urlParts.pathname) {
-    options.database = urlParts.pathname.replace(/^\//, '');
+    parsed.database = urlParts.pathname.replace(/^\//, '');
   }
 
   if (urlParts.port) {
-    options.port = urlParts.port;
+    parsed.port = urlParts.port;
   }
 
   if (urlParts.auth) {
     const authParts = urlParts.auth.split(':');
-    options.username = authParts[0];
-    if (authParts.length > 1) options.password = authParts.slice(1).join(':');
+    parsed.username = authParts[0];
+    if (authParts.length > 1) parsed.password = authParts.slice(1).join(':');
   }
 
   if (urlParts.query) {
-    if (options.dialectOptions) options.dialectOptions = { ...options.dialectOptions, ...urlParts.query };
-    else options.dialectOptions = urlParts.query;
+    if (parsed.dialectOptions) parsed.dialectOptions = { ...parsed.dialectOptions, ...urlParts.query };
+    else parsed.dialectOptions = urlParts.query;
   }
 
-  return options;
+  return parsed;
 }
