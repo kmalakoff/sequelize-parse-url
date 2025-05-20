@@ -19,7 +19,15 @@
     "url": "git+https://github.com/kmalakoff/sequelize-parse-url.git"
   },
   "license": "MIT",
-  "author": "Kevin Malakoff",
+  "author": "Kevin Malakoff <kmalakoff@gmail.com> (https://github.com/kmalakoff)",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./package.json": "./package.json"
+  },
   "main": "dist/cjs/index.js",
   "types": "dist/cjs/index.d.cts",
   "files": [
@@ -40,9 +48,6 @@
     "node": ">=0.8"
   },
   "tsds": {
-    "source": "src/index.ts",
-    "targets": [
-      "cjs"
-    ]
+    "source": "src/index.ts"
   }
 }
