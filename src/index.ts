@@ -16,7 +16,7 @@ export interface ParseOptions {
   storage?: string;
 }
 
-export default function parseUrl(sourceUrl, options: ParseOptions = {}): Parsed {
+export default function parseUrl(sourceUrl: string, options: ParseOptions = {}): Parsed {
   const urlParts = url.parse(sourceUrl, true);
   const parsed = {
     dialect: urlParts.protocol.replace(/:$/, ''),
