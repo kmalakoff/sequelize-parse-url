@@ -9,7 +9,7 @@ export interface Parsed {
   port?: string;
   username?: string;
   password?: string;
-  dialectOptions?: object;
+  dialectOptions?: NodeJS.Dict<string | string[]>;
 }
 
 export interface ParseOptions {
