@@ -1,6 +1,6 @@
 {
   "name": "sequelize-parse-url",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "Parses a sequelize url into a configuration object",
   "keywords": [
     "sequelize",
