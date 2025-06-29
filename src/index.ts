@@ -23,7 +23,7 @@ export default function parseUrl(sourceUrl: string, options: ParseOptions = {}):
     host: urlParts.hostname,
   } as Parsed;
 
-  if (parsed.dialect === 'sqlite' && urlParts.pathname && !urlParts.pathname.startsWith('/:memory')) {
+  if (parsed.dialect === 'sqlite' && urlParts.pathname && urlParts.pathname.indexOf('/:memory') !== 0) {
     parsed.storage = path.resolve(options.storage || path.join(parsed.host, urlParts.pathname));
   }
 
