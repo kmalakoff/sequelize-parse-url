@@ -1,7 +1,6 @@
 import assert from 'assert';
 import path from 'path';
 
-// @ts-ignore
 import parse from 'sequelize-parse-url';
 
 describe('Instantiation with a URL string', () => {
