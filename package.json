@@ -43,11 +43,11 @@
     "version": "tsds version"
   },
   "devDependencies": {
-    "@types/mocha": "*",
-    "@types/node": "*",
-    "node-version-use": "*",
-    "ts-dev-stack": "*",
-    "tsds-config": "*"
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^24.10.1",
+    "node-version-use": "^1.9.7",
+    "ts-dev-stack": "^1.21.2",
+    "tsds-config": "^0.2.0"
   },
   "engines": {
     "node": ">=0.8"
