@@ -17,7 +17,7 @@ describe('Instantiation with a URL string', () => {
   });
 
   describe('sqllite path initialization', () => {
-    // var current = Support.sequelize;
+    // let current = Support.sequelize;
     const current = { dialect: 'sqlite' };
     if (current.dialect === 'sqlite') {
       it('should accept relative paths for sqlite', () => {
