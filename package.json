@@ -42,12 +42,16 @@
     "test:engines": "nvu engines tsds test:node --no-timeouts",
     "version": "tsds version"
   },
+  "dependencies": {
+    "url-parse": "^1.5.10"
+  },
   "devDependencies": {
-    "@types/mocha": "^10.0.10",
-    "@types/node": "^25.0.1",
-    "node-version-use": "^2.1.5",
-    "ts-dev-stack": "^1.21.3",
-    "tsds-config": "^0.2.1"
+    "@types/mocha": "*",
+    "@types/node": "*",
+    "@types/url-parse": "^1.4.11",
+    "node-version-use": "*",
+    "ts-dev-stack": "*",
+    "tsds-config": "*"
   },
   "engines": {
     "node": ">=0.8"

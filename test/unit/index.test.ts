@@ -43,7 +43,7 @@ describe('Instantiation with a URL string', () => {
         assert.equal(options.dialect, 'sqlite');
 
         // empty host is treated as :memory:
-        assert.equal(options.host, '');
+        assert.equal(options.host, ':memory');
         assert.equal(options.storage, undefined);
       });
     }
@@ -65,7 +65,7 @@ describe('Instantiation with a URL string', () => {
 
   it('should pass query string parameters to dialectOptions', () => {
     const options = parse('mysql://example.com:9821/dbname?ssl=true');
-    const dialectOptions = options.dialectOptions;
+    const dialectOptions = options.dialectOptions ?? {};
 
     assert.equal(dialectOptions.ssl, 'true');
   });

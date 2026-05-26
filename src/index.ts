@@ -1,5 +1,5 @@
 import path from 'path';
-import url from 'url';
+import parse from 'url-parse';
 
 export interface Parsed {
   dialect: string;
@@ -17,9 +17,9 @@ export interface ParseOptions {
 }
 
 export default function parseUrl(sourceUrl: string, options: ParseOptions = {}): Parsed {
-  const urlParts = url.parse(sourceUrl, true);
+  const urlParts = parse(sourceUrl, true);
   const parsed = {
-    dialect: urlParts.protocol.replace(/:$/, ''),
+    dialect: (urlParts.protocol ?? '').replace(/:$/, ''),
     host: urlParts.hostname,
   } as Parsed;
 
