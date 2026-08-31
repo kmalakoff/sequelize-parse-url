@@ -1,1 +1,1 @@
-ignores: ["node-version-use", "ts-dev-stack", "sequelize-parse-url"]
+ignores: ["sequelize-parse-url", "node-version-use", "ts-dev-stack"]
