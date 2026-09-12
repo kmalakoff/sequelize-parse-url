@@ -1,20 +1,29 @@
 # sequelize-parse-url
 
-Parses a sequelize url into a configuration object.
+Convert a Sequelize-style database URL into a configuration object without
+installing Sequelize. Extracted from the
+[Sequelize](https://github.com/sequelize/sequelize) codebase.
 
-Extracted from (sequelize)[https://github.com/sequelize/sequelize] codebase so you can use in your own workflows.
-
+```bash
+npm install sequelize-parse-url
 ```
-var assert = require('assert');
-var parse = require('sequelize-parse-url');
 
-var config = parse('mysql://user:pass@example.com:9821/dbname');
+```js
+import parseUrl from 'sequelize-parse-url';
 
-assert.equal(config.dialect, 'mysql');
+const config = parseUrl('mysql://user:pass@example.com:9821/app?ssl=true');
 
-assert.equal(config.database, 'dbname');
-assert.equal(config.host, 'example.com');
-assert.equal(config.username, 'user');
-assert.equal(config.password, 'pass');
-assert.equal(config.port, '9821');
+console.log(config);
+// {
+//   dialect: 'mysql',
+//   host: 'example.com',
+//   database: 'app',
+//   port: '9821',
+//   username: 'user',
+//   password: 'pass',
+//   dialectOptions: { ssl: 'true' }
+// }
 ```
+
+SQLite URLs also produce an absolute `storage` path. Pass
+`{ storage: '/path/to/database.sqlite' }` as the second argument to override it.
